@@ -14,6 +14,9 @@ class Car:
     def __str__(self):
         return f'{self.make} {self.model} {self.year}'
 
+    def __eq__(self, other):
+        return self.make == other.make and self.model == other.model
+
     def stop(self):
         if self.is_moving:
             print('The car has Stopped')
@@ -55,6 +58,12 @@ my_dealership = Dealership()
 my_dealership.add_car(car_one)
 my_dealership.add_car(car_two)
 my_dealership.add_car(car_three)
+
+if car_one == car_two:
+    print('equal')
+else:
+    print('not equal')
+
 for car in my_dealership:
     print(car)
 
